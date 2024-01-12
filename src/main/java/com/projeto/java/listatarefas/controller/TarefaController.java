@@ -1,24 +1,23 @@
 package com.projeto.java.listatarefas.controller;
 
-
 import com.projeto.java.listatarefas.dto.TarefaDTO;
-import com.projeto.java.listatarefas.model.Tarefa;
 import com.projeto.java.listatarefas.service.TarefaService;
 import jakarta.validation.Valid;
-import lombok.RequiredArgsConstructor;
+import lombok.AllArgsConstructor;
+import lombok.NoArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
-
-@RestController("/tarefa")
-@RequiredArgsConstructor
+@AllArgsConstructor
+@RestController
+@RequestMapping("/tarefa")
 public class TarefaController {
 
-    private final TarefaService tarefaService;
+
+    private TarefaService tarefaService;
 
     @GetMapping
     public List<TarefaDTO> listarTarefas(){
