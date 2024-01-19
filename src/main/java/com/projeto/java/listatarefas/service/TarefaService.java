@@ -49,8 +49,8 @@ public class TarefaService {
 
         if( tarefaDTO.getDescricao() != null && !tarefaDTO.getDescricao().equals(tarefa.getDescricao())){
             tarefa.setDescricao(tarefaDTO.getDescricao());
-
         }
+
         tarefa = tarefaRepository.save(tarefa);
         return TarefaDTO.convert(tarefa);
     }
